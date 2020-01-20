@@ -4,12 +4,20 @@ import android.util.Log
 import org.bedu.retrofitsalinas.api.RetrofitService
 import org.bedu.retrofitsalinas.model.Cita
 import org.bedu.retrofitsalinas.model.Response
+import org.bedu.retrofitsalinas.model.sendId
 import org.bedu.retrofitsalinas.view.DatesView
 import org.bedu.retrofitsalinas.view.MainView
 import retrofit2.Call
 import retrofit2.Callback
 
 class DatesPresenterImp() : DatesPresenter {
+    override fun obtenerCitas(id: String, ruta: String) {
+
+    }
+
+    override fun obtenerCitasPasadas(id: String, ruta: String) {
+
+    }
 
     private val api: RetrofitService = RetrofitService.create()
     private lateinit var vista:MainView
@@ -42,8 +50,8 @@ class DatesPresenterImp() : DatesPresenter {
         })
     }
 
-    override fun obtenerCitas(id: String, ruta: String) {
-        val request = api.obtenerCitas(ruta, id)
+    override fun obtenerCitasPost(id: sendId, ruta: String) {
+        val request = api.obtenerCitasPost(ruta, id)
         request.enqueue(object: Callback<List<Cita>> {
             override fun onFailure(call: Call<List<Cita>>, t: Throwable) {
                 Log.d("Mensaje",t.toString())
@@ -57,8 +65,8 @@ class DatesPresenterImp() : DatesPresenter {
         })
     }
 
-    override fun obtenerCitasPasadas(id: String, ruta: String) {
-        val request = api.obtenerCitasPasadas(ruta, id)
+    override fun obtenerCitasPasadasPost(id: sendId, ruta: String) {
+        val request = api.obtenerCitasPasadasPost(ruta, id)
         request.enqueue(object: Callback<List<Cita>> {
             override fun onFailure(call: Call<List<Cita>>, t: Throwable) {
                 Log.d("Mensaje",t.toString())

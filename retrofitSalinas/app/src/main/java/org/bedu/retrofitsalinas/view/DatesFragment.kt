@@ -16,6 +16,7 @@ import org.bedu.retrofitsalinas.adapter.DatesAdapter
 import org.bedu.retrofitsalinas.model.Cita
 import org.bedu.retrofitsalinas.presenter.DatesPresenterImp
 import org.bedu.retrofitsalinas.adapter.PastDatesAdapter
+import org.bedu.retrofitsalinas.model.sendId
 
 
 /**
@@ -46,16 +47,17 @@ class DatesFragment : Fragment(), DatesView {
         var idUser = obtenerUserId()
 
         button.setOnClickListener{
-            presenter.obtenerCitas(idUser, "getCitas")
+            presenter.obtenerCitasPost(idUser, "getCitas")
         }
 
         button2.setOnClickListener{
-            presenter.obtenerCitasPasadas(idUser, "getCitasPasadas")
+            presenter.obtenerCitasPasadasPost(idUser, "getCitasPasadas")
         }
     }
 
-    override fun obtenerUserId(): String {
-        return shared.getString("idUsuario", "0").toString()
+    override fun obtenerUserId(): sendId {
+        return sendId(1)
+        //return shared.getString("idUsuario", "0").toString()
     }
 
     override fun llenarRecycler(listaCitas:List<Cita>) {
