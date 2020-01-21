@@ -26,11 +26,10 @@ class DatesAdapter (var lista: List<Cita>) : RecyclerView.Adapter<DatesAdapter.M
 
     class MyViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
         fun enlazarItem(cita: Cita) {
-            itemView.txtDoctor.text = "FECHA: ${cita.fecha}"
-            itemView.txtHora.text = "FECHA: ${cita.fecha}"
-            itemView.txtFecha.text = "FECHA: ${cita.fecha}"
-            itemView.txtClinica.text = "FECHA: ${cita.fecha}"
+            itemView.txtDoctor.text = "${cita.nombreDoctor}"
+            itemView.tvAsunto.text = "${cita.asunto}"
+            itemView.txtFecha.text = "${cita.fecha}"
+            itemView.txtClinica.text = "Clinica: ${cita.clinica}"
         }
-
     }
 }

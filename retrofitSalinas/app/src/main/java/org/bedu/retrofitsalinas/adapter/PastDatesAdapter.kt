@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.dates_item.view.*
 import kotlinx.android.synthetic.main.dates_item.view.txtDoctor
 import kotlinx.android.synthetic.main.dates_item.view.txtFecha
-import kotlinx.android.synthetic.main.dates_item.view.txtHora
 import kotlinx.android.synthetic.main.past_dates_item.view.*
 import org.bedu.retrofitsalinas.R
 import org.bedu.retrofitsalinas.model.Cita
@@ -30,7 +29,7 @@ class PastDatesAdapter (var lista: List<Cita>) : RecyclerView.Adapter<PastDatesA
 
     class MyViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
         fun enlazarItem(cita: Cita) {
-            itemView.txtDoctor.text = "FECHA: ${cita.fecha}"
+            itemView.txtDoctor.text = "FECHA: ${cita.nombreDoctor}"
             itemView.txtHora.text = "FECHA: ${cita.fecha}"
             itemView.txtFecha.text = "FECHA: ${cita.fecha}"
             itemView.ratingBar2.rating =

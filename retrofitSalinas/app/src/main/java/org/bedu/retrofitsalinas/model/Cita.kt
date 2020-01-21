@@ -7,6 +7,7 @@ data class Cita(
     @SerializedName("fecha") var fecha: String,
     @SerializedName("idDoctor") var idDoctor: Int,
     @SerializedName("idUsuario") var idPaciente: Int,
-    @SerializedName("nombreDoctor") var nombreDoctor: String,
+    @SerializedName("nombre") var nombreDoctor: String,
+    @SerializedName("asunto") var asunto: String,
     @SerializedName("calificacion") var calificacion: Float,
     @SerializedName("clinica") var clinica: String)
