@@ -1,12 +1,17 @@
-package org.bedu.retrofitsalinas.presenter
+package org.bedu.retrofitsalinas.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_login.*
 import org.bedu.retrofitsalinas.R
-import org.bedu.retrofitsalinas.view.LoginView
+import org.bedu.retrofitsalinas.model.loginSend
+import org.bedu.retrofitsalinas.presenter.LoginImp
+import org.bedu.retrofitsalinas.view.doctor.HomeEmpresarialActivity
+import org.bedu.retrofitsalinas.view.paciente.HomePacienteActivity
+import org.bedu.retrofitsalinas.view.paciente.InfoDoctorActivity
 
 class LoginActivity : AppCompatActivity(), LoginView {
 
@@ -14,7 +19,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_blank)
+        setContentView(R.layout.activity_login)
 
         login.setOnClickListener {
             var email = usernameEdit.text.toString()
@@ -24,11 +29,10 @@ class LoginActivity : AppCompatActivity(), LoginView {
             presenter.sendLogin(user)
             //val intento = Intent(this,HomeEmpresarialActivity::class.java)
             //startActivity(intento)
-
         }
 
         register.setOnClickListener {
-            val intento = Intent(this,RegistroActivity::class.java)
+            val intento = Intent(this, RegistroActivity::class.java)
             startActivity(intento)
         }
     }
@@ -43,14 +47,13 @@ class LoginActivity : AppCompatActivity(), LoginView {
             if (isDoctor) {
                 //SE MANDA A LA ACTIVIDAD DE LOS DOCTORES
                 Log.d("Mensaje","Se inicio sesion como un Doctor")
-                val intento = Intent(this,HomeEmpresarialActivity::class.java)
+                val intento = Intent(this, HomeEmpresarialActivity::class.java)
                 startActivity(intento)
             } else if (!isDoctor) {
                 //SE MANDA A LA ACTIVIDAD DE USUARIOS
                 Log.d("Mensaje","Se inicio sesion como un Usuario")
-                val intento = Intent(this,InfoDoctorActivity::class.java)
+                val intento = Intent(this, HomePacienteActivity::class.java)
                 startActivity(intento)
-
             }
         }
     }

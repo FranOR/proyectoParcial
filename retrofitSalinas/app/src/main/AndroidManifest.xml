@@ -3,6 +3,9 @@
     package="org.bedu.retrofitsalinas">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -10,15 +13,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".presenter.LoginActivity"></activity>
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.paciente.InfoDoctorActivity"></activity>
+        <activity android:name=".view.paciente.HomePacienteActivity"></activity>
+        <activity android:name=".view.doctor.HomeEmpresarialActivity" />
+        <activity android:name=".view.RegistroActivity" />
+        <activity android:name=".view.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".view.MainActivity">
+
         </activity>
     </application>
 

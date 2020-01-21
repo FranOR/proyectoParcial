@@ -5,7 +5,7 @@ import org.bedu.retrofitsalinas.api.RetrofitService
 import org.bedu.retrofitsalinas.model.Cita
 import org.bedu.retrofitsalinas.model.Response
 import org.bedu.retrofitsalinas.model.sendId
-import org.bedu.retrofitsalinas.view.DatesView
+import org.bedu.retrofitsalinas.view.paciente.DatesView
 import org.bedu.retrofitsalinas.view.MainView
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,7 +21,7 @@ class DatesPresenterImp() : DatesPresenter {
 
     private val api: RetrofitService = RetrofitService.create()
     private lateinit var vista:MainView
-    private lateinit var vista2:DatesView
+    private lateinit var vista2: DatesView
 
     constructor(vista: MainView) : this() {
         this.vista = vista

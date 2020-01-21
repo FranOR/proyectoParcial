@@ -1,4 +1,4 @@
-package org.bedu.retrofitsalinas.view
+package org.bedu.retrofitsalinas.view.paciente
 
 
 import android.content.Context

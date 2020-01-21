@@ -1,4 +1,4 @@
-package org.bedu.retrofitsalinas.view
+package org.bedu.retrofitsalinas.view.paciente
 
 import androidx.recyclerview.widget.RecyclerView
 import org.bedu.retrofitsalinas.model.Cita

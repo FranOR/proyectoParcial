@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navAsistencia"
+        android:title="Asistencia"
+        android:icon="@drawable/ic_check" />
+    <item
+        android:id="@+id/navAvisos"
+        android:title="Avisos Generales"
+        android:icon="@drawable/ic_notifications" />
+    <item
+        android:id="@+id/navIncidencias"
+        android:title="Incidencias"
+        android:icon="@drawable/ic_archive" />
+    <item
+        android:id="@+id/Configuración"
+        android:title="Configuración"
+        android:icon="@drawable/ic_settings"/>
+</menu>
