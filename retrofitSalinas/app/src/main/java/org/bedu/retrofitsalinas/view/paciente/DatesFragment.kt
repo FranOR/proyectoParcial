@@ -26,6 +26,9 @@ class DatesFragment : Fragment(), DatesView {
 
     val presenter = DatesPresenterImp(this)
     lateinit var shared: SharedPreferences
+    val PREFS_NAME = "sharedpreferences"
+    val ID = "ID"
+    lateinit var preferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +43,7 @@ class DatesFragment : Fragment(), DatesView {
 
         //TODO ponerlo como string, getPreferences
         shared  = this.activity!!.getSharedPreferences("user", Context.MODE_PRIVATE)
+        preferences = context!!.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
         //onClick
         //var cita = Cita(1, "2020-30-01 17:00",1, 1)
@@ -56,7 +60,7 @@ class DatesFragment : Fragment(), DatesView {
     }
 
     override fun obtenerUserId(): sendId {
-        return sendId(1)
+        return sendId(preferences.getInt(ID,0))
         //return shared.getString("idUsuario", "0").toString()
     }
 
@@ -71,6 +75,4 @@ class DatesFragment : Fragment(), DatesView {
         var miAdapter = PastDatesAdapter(listaCitas)
         recyclerCitas.adapter = miAdapter
     }
-
-
 }

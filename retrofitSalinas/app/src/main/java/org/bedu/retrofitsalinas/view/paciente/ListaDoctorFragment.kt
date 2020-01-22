@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bedu.proyectosalinas.presenter.paciente.ListaDoctorImp
+import com.bedu.proyectosalinas.view.doctor.AsistenciaFragment
 import kotlinx.android.synthetic.main.lista_doctores_fragment.*
 import org.bedu.retrofitsalinas.R
 import org.bedu.retrofitsalinas.adapter.ListaDoctoresAdapter
@@ -20,9 +21,14 @@ import org.bedu.retrofitsalinas.view.paciente.InfoDoctorFragment
 class ListaDoctorFragment: Fragment(), ListaDoctorView,OnItemClickListener {
     override fun onItemClicked(doctor: Doctor) {
         Toast.makeText(context,doctor.apellidos, Toast.LENGTH_LONG).show()
-        val intento = Intent(context, InfoDoctorFragment::class.java)
-        intento.putExtra("infoDoctor", doctor)
-        startActivity(intento)
+        val fragment = InfoDoctorFragment()
+        val args = Bundle()
+        args.putSerializable("infoDoctor", doctor)
+        fragment.setArguments(args)
+        openFragment(fragment)
+        //val intento = Intent(context, InfoDoctorFragment::class.java)
+        //intento.putExtra("infoDoctor", doctor)
+        //startActivity(intento)
     }
 
 
@@ -46,6 +52,12 @@ class ListaDoctorFragment: Fragment(), ListaDoctorView,OnItemClickListener {
         recyclerDoctores.layoutManager = LinearLayoutManager(this.context)
         var miAdapter = ListaDoctoresAdapter(listaDoctores, this)
         recyclerDoctores.adapter = miAdapter
+    }
 
+    private fun openFragment(fragment: Fragment) {
+        val transaction = activity?.supportFragmentManager!!.beginTransaction()
+        transaction.replace(R.id.fragment1, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

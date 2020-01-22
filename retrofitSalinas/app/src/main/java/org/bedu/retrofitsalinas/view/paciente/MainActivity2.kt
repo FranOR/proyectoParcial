@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import org.bedu.retrofitsalinas.R
-import org.bedu.retrofitsalinas.view.MainView
+import org.bedu.retrofitsalinas.view.doctor.MainView
 
 class MainActivity2 : AppCompatActivity(), MainView {
 

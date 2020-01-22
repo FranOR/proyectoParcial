@@ -31,7 +31,8 @@ class ListaDoctoresAdapter(var lista: List<Doctor>, val itemClickListener: OnIte
         fun enlazarItem(doctor: Doctor,clickListener: OnItemClickListener) {
             itemView.doctorName.text = doctor.nombre
             itemView.doctorSpecial.text = doctor.especialidad
-            itemView.ratingBar.text = doctor.calificacion
+            //itemView.ratingBar.text = doctor.calificacion
+            itemView.ratingBar.rating = doctor.calificacion
 
             itemView.setOnClickListener{
                 clickListener.onItemClicked(doctor)

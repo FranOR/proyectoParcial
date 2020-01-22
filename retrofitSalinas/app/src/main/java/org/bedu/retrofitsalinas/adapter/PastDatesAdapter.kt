@@ -4,9 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.dates_item.view.*
-import kotlinx.android.synthetic.main.dates_item.view.txtDoctor
-import kotlinx.android.synthetic.main.dates_item.view.txtFecha
 import kotlinx.android.synthetic.main.past_dates_item.view.*
 import org.bedu.retrofitsalinas.R
 import org.bedu.retrofitsalinas.model.Cita
@@ -29,11 +26,16 @@ class PastDatesAdapter (var lista: List<Cita>) : RecyclerView.Adapter<PastDatesA
 
     class MyViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
         fun enlazarItem(cita: Cita) {
-            itemView.txtDoctor.text = "FECHA: ${cita.nombreDoctor}"
+            itemView.txtDoctor.text = "${cita.nombreDoctor}"
+            itemView.tvAsunto.text = "${cita.asunto}"
+            itemView.txtFecha.text = "${cita.fecha}"
+            itemView.txtClinica.rating = cita.calificacion
+
+            /*itemView.txtDoctor.text = "FECHA: ${cita.nombreDoctor}"
             itemView.txtHora.text = "FECHA: ${cita.fecha}"
             itemView.txtFecha.text = "FECHA: ${cita.fecha}"
             itemView.ratingBar2.rating =
-                if(cita.id > 5) {5.0F} else {cita.id.toFloat()}
+                if(cita.id > 5) {5.0F} else {cita.id.toFloat()}*/
         }
     }
 }
