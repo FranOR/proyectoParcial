@@ -9,7 +9,7 @@
     tools:context=".view.RegistroActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Telefono"
+        android:id="@+id/emailBox"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -41,7 +41,7 @@
         app:helperText="Contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Telefono">
+        app:layout_constraintTop_toBottomOf="@+id/emailBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pwd"
@@ -69,7 +69,7 @@
             android:id="@+id/nombreCompleto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,7 +142,7 @@
             android:id="@+id/telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="phone" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
