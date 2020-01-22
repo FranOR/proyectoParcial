@@ -11,6 +11,9 @@ import retrofit2.http.Path
 
 interface RetrofitService {
 
+    @POST("{params}")
+    fun register(@Path("params") params: String, @Body registration: Usuario): Call<loginResult>
+
     @POST("{param}")
     fun registerDate(@Path("param") param: String, @Body cita: Cita): Call<Respuesta>
 
