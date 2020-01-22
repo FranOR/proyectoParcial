@@ -12,7 +12,7 @@ import retrofit2.http.Path
 interface RetrofitService {
 
     @POST("{param}")
-    fun registerDate(@Path("param") param: String, @Body cita: Cita): Call<Response>
+    fun registerDate(@Path("param") param: String, @Body cita: Cita): Call<Respuesta>
 
     @POST("{param}")
     fun obtenerCitasPost(@Path("param") param: String, @Body cita: sendId): Call<List<Cita>>
@@ -52,6 +52,9 @@ interface RetrofitService {
 
     @POST("{params}")
     fun changeStatus(@Path("params") params: String,@Body body:ChangeStatus): Call<Respuesta>
+    @POST("{params}")
+    fun getFechas(@Path("params") params: String, @Body idDoctor: sendId): Call<List<Fechas>>
+
     companion object Factory {
         fun create(): RetrofitService {
             var retrofit = Retrofit.Builder()

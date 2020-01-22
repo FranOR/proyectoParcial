@@ -9,9 +9,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main_cliente.*
 import org.bedu.retrofitsalinas.R
 import org.bedu.retrofitsalinas.model.Doctor
+import org.bedu.retrofitsalinas.model.Fechas
 import org.bedu.retrofitsalinas.presenter.MainPageImp
 
 class InfoDoctorActivity : AppCompatActivity(), InfoDoctorView {
+    override fun mostrarToast(mensaje: String) {
+        //N/A
+    }
+
+    override fun customAlert(listaFechas: List<Fechas>) {
+        //N/A
+    }
+
 
     val presenter = MainPageImp(this)
 

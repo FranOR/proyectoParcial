@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.home_empresarial.*
 import org.bedu.retrofitsalinas.R
-import org.bedu.retrofitsalinas.view.MainActivity
 
 class HomeEmpresarialActivity: AppCompatActivity() {
 

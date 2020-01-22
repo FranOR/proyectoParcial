@@ -4,9 +4,10 @@ import android.util.Log
 import org.bedu.retrofitsalinas.api.RetrofitService
 import org.bedu.retrofitsalinas.model.Cita
 import org.bedu.retrofitsalinas.model.Response
+import org.bedu.retrofitsalinas.model.Respuesta
 import org.bedu.retrofitsalinas.model.sendId
 import org.bedu.retrofitsalinas.view.paciente.DatesView
-import org.bedu.retrofitsalinas.view.MainView
+import org.bedu.retrofitsalinas.view.doctor.MainView
 import retrofit2.Call
 import retrofit2.Callback
 
@@ -20,7 +21,7 @@ class DatesPresenterImp() : DatesPresenter {
     }
 
     private val api: RetrofitService = RetrofitService.create()
-    private lateinit var vista:MainView
+    private lateinit var vista: MainView
     private lateinit var vista2: DatesView
 
     constructor(vista: MainView) : this() {
@@ -33,11 +34,11 @@ class DatesPresenterImp() : DatesPresenter {
 
     override fun crearCita(cita: Cita, ruta: String) {
         val request = api.registerDate(ruta, cita)
-        request.enqueue(object: Callback<Response> {
-            override fun onFailure(call: Call<Response>, t: Throwable) {
+        request.enqueue(object: Callback<Respuesta> {
+            override fun onFailure(call: Call<Respuesta>, t: Throwable) {
                 Log.d("Mensaje",t.toString())
             }
-            override fun onResponse(call: Call<Response>, response: retrofit2.Response<Response>) {
+            override fun onResponse(call: Call<Respuesta>, response: retrofit2.Response<Respuesta>) {
                 if (response.isSuccessful){
                     /*for (comentario in response.body()!!){
                         Log.d("Mensaje", "${comentario.id}")

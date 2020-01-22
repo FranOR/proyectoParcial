@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.activity_nueva_incidencia.*
 import org.bedu.retrofitsalinas.R
 import org.bedu.retrofitsalinas.model.IncidenciaRetrofit
 import org.bedu.retrofitsalinas.presenter.PresenterRetroIncidencia
-import org.bedu.retrofitsalinas.view.MainActivity
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

@@ -1,6 +1,8 @@
 package org.bedu.retrofitsalinas.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +18,9 @@ import org.bedu.retrofitsalinas.view.paciente.InfoDoctorActivity
 class LoginActivity : AppCompatActivity(), LoginView {
 
     val presenter = LoginImp(this)
+    val PREFS_NAME = "sharedpreferences"
+    val ID = "ID"
+    lateinit var preferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +48,10 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun getLoginData(id: Int, isDoctor: Boolean) {
         if (id > 0) {
+            preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            preferences.edit()
+                .putInt(ID, id)
+                .commit()
             //SE AGREGA FUNCION PARA ALMACENAR EL ID EN SHAREDPREFERENCES
             if (isDoctor) {
                 //SE MANDA A LA ACTIVIDAD DE LOS DOCTORES

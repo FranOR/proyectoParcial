@@ -1,4 +1,4 @@
-package org.bedu.retrofitsalinas.view
+package org.bedu.retrofitsalinas.view.doctor
 
 import android.content.Intent
 import android.os.Build
@@ -10,7 +10,6 @@ import com.bedu.proyectosalinas.view.doctor.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import org.bedu.retrofitsalinas.R
-import org.bedu.retrofitsalinas.view.doctor.HomeEmpresarialActivity
 
 class MainActivity : AppCompatActivity() {
 
