@@ -58,7 +58,7 @@ interface RetrofitService {
     companion object Factory {
         fun create(): RetrofitService {
             var retrofit = Retrofit.Builder()
-                .baseUrl("http://10.100.78.132:9097/")
+                .baseUrl("http://10.100.75.125:9097/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 

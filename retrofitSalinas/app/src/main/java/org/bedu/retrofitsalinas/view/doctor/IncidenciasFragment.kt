@@ -12,14 +12,22 @@ import kotlinx.android.synthetic.main.incidencias_fragment.*
 import org.bedu.retrofitsalinas.R
 import org.bedu.retrofitsalinas.adapter.IncidenciasAdapter
 import org.bedu.retrofitsalinas.model.Incidencia
+import org.bedu.retrofitsalinas.model.Respuesta
 import org.bedu.retrofitsalinas.model.sendId
 import org.bedu.retrofitsalinas.presenter.AvisosPresenterImp
 import org.bedu.retrofitsalinas.presenter.IncidenciasPresenterImp
 import org.bedu.retrofitsalinas.view.doctor.IncidenciasView
+import org.bedu.retrofitsalinas.view.doctor.MainActivity
 import org.bedu.retrofitsalinas.view.doctor.NuevaIncidencia
 
 
 class IncidenciasFragment : Fragment(),IncidenciasView {
+    override fun refrescarLista(respuesta: Respuesta) {
+        val intento = Intent(vista.context, MainActivity::class.java)
+        intento.putExtra("request","incidencias")
+        startActivity(intento)
+    }
+
     override fun mostrarIncidencias(listIncidencias: List<Incidencia>) {
 
         var adaptador = IncidenciasAdapter(listIncidencias,vista.context)
