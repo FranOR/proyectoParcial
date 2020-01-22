@@ -41,6 +41,17 @@ interface RetrofitService {
     @POST("{params}")
     fun getInfoDoctor(@Path("params") params: String, @Body idDoctor: sendId): Call<Doctor>
 
+    @GET("{params}")
+    fun getAvisos(@Path("params") params: String): Call<List<Aviso>>
+
+    @POST("{params}")
+    fun createAviso(@Path("params") params: String, @Body aviso: Aviso): Call<String>
+
+    @POST("{params}")
+    fun getIncidencias(@Path("params") params: String,@Body id:sendId): Call<List<Incidencia>>
+
+    @POST("{params}")
+    fun changeStatus(@Path("params") params: String,@Body body:ChangeStatus): Call<Respuesta>
     companion object Factory {
         fun create(): RetrofitService {
             var retrofit = Retrofit.Builder()
