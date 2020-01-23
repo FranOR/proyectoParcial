@@ -40,12 +40,7 @@ class DatesPresenterImp() : DatesPresenter {
             }
             override fun onResponse(call: Call<Respuesta>, response: retrofit2.Response<Respuesta>) {
                 if (response.isSuccessful){
-                    /*for (comentario in response.body()!!){
-                        Log.d("Mensaje", "${comentario.id}")
-                        Log.d("Mensaje", comentario.name)
-                        Log.d("Mensaje", comentario.body)
-                        Log.d("Mensaje", comentario.email)
-                    }*/
+
                 }
             }
         })

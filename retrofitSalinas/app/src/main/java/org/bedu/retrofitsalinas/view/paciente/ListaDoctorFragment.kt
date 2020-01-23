@@ -26,9 +26,6 @@ class ListaDoctorFragment: Fragment(), ListaDoctorView,OnItemClickListener {
         args.putSerializable("infoDoctor", doctor)
         fragment.setArguments(args)
         openFragment(fragment)
-        //val intento = Intent(context, InfoDoctorFragment::class.java)
-        //intento.putExtra("infoDoctor", doctor)
-        //startActivity(intento)
     }
 
 
@@ -38,7 +35,6 @@ class ListaDoctorFragment: Fragment(), ListaDoctorView,OnItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.lista_doctores_fragment, container, false)
     }
 

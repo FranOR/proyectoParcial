@@ -28,7 +28,6 @@ class MainPageImp(var vista: InfoDoctorView): MainPage  {
                 if(response.isSuccessful){
                     nombreDoctor = response.body()!!.nombre
                     doctor = response.body()!!
-                    //vista.infoDoctor(nombreDoctor)
                     Log.d("Message", "${response.body()}")
                 }
             }

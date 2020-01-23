@@ -34,7 +34,6 @@ class DatesFragment : Fragment(), DatesView {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_dates, container, false)
     }
 
@@ -45,9 +44,6 @@ class DatesFragment : Fragment(), DatesView {
         shared  = this.activity!!.getSharedPreferences("user", Context.MODE_PRIVATE)
         preferences = context!!.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-        //onClick
-        //var cita = Cita(1, "2020-30-01 17:00",1, 1)
-        //presenter.crearCita(cita, "nuevaCita")
         var idUser = obtenerUserId()
 
         button.setOnClickListener{
@@ -61,7 +57,6 @@ class DatesFragment : Fragment(), DatesView {
 
     override fun obtenerUserId(): sendId {
         return sendId(preferences.getInt(ID,0))
-        //return shared.getString("idUsuario", "0").toString()
     }
 
     override fun llenarRecycler(listaCitas:List<Cita>) {

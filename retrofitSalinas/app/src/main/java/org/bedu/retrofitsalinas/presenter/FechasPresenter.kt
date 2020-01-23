@@ -21,7 +21,6 @@ class FechasPresenter(var vista: InfoDoctorView) {
                 response: Response<List<Fechas>>
             ) {
                 if(response.isSuccessful){
-                    //vista.infoDoctor(response.body()!!)
                     var listaFechas = response.body() as List<Fechas>
                     vista.customAlert(listaFechas)
                     Log.d("Message", "${response.body()}")

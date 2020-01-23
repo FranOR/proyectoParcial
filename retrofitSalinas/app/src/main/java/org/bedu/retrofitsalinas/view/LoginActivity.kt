@@ -32,8 +32,6 @@ class LoginActivity : AppCompatActivity(), LoginView {
             Log.d("Mensaje","Parametros: $email - $password")
             var user = loginSend(email,password)
             presenter.sendLogin(user)
-            //val intento = Intent(this,HomeEmpresarialActivity::class.java)
-            //startActivity(intento)
         }
 
         register.setOnClickListener {

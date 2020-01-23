@@ -43,28 +43,20 @@ class InfoDoctorFragment : Fragment(), InfoDoctorView {
         super.onViewCreated(view, savedInstanceState)
 
         val presenter = FechasPresenter(this)
-        //var test = sendId(1)
-        //var reqFragment = getIntent().getStringExtra("request")
         preferences = context!!.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         info = arguments?.getSerializable("infoDoctor") as Doctor
-        //presenter.mostrarInfoDoctor(info)
         infoDoctor(info)
 
         buttonCita.setOnClickListener {
             presenter.obtenerFechas(sendId(info.id))
-            //alertCustom()
         }
     }
 
     override fun customAlert(listaFechas: List<Fechas>) {
 
         val view = layoutInflater.inflate(R.layout.time_alert, null)
-
-        //String array.
-        //var valores3 = arrayOf<String>()
         val stringsOrNulls = arrayOfNulls<String>(listaFechas.size) // returns Array<String?>
-        //val myStrings:Array<String>
-        //stringsOrNulls[0] = "Selecciona..."
+
         var j = 0
         for(i in listaFechas){
             stringsOrNulls[j] = i.fecha
@@ -78,13 +70,12 @@ class InfoDoctorFragment : Fragment(), InfoDoctorView {
         dialog.setTitle("Fechas disponibles")
 
         dialog.setPositiveButton("Agendar") { dialog, which ->
-            Toast.makeText(context, "Ok, we change the app background.", Toast.LENGTH_SHORT).show()
             var cita = Cita(0, view.spinner.selectedItem.toString(),info.id, preferences.getInt(ID,0),"", "Consulta",0f,"")
             presenter.registrarCita(cita)
         }
 
         dialog.setNegativeButton(android.R.string.no) { dialog, which ->
-            //Toast.makeText(context, android.R.string.no, Toast.LENGTH_SHORT).show()
+            //N/A
         }
         dialog.setView(view)
         dialog.setCancelable(false)

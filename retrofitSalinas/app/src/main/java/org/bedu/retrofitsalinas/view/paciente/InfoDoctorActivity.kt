@@ -28,7 +28,6 @@ class InfoDoctorActivity : AppCompatActivity(), InfoDoctorView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_cliente)
 
-        //presenter.mostrarInfoDoctor("2")
         var reqFragment = getIntent().getStringExtra("request")
         setupNavigation(bottom_navigation,reqFragment!!)
     }
